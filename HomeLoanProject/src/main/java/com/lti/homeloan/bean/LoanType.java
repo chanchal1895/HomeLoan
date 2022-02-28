@@ -15,7 +15,7 @@ public class LoanType {
 
 	@Id
 	@Column(name = "LOAN_TYPE_ID")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	//@GeneratedValue(strategy=GenerationType.AUTO)
 	private int loanTypeId;
 
 	@Column(name = "LOAN_TYPE_NAME")

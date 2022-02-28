@@ -1,4 +1,4 @@
-		package com.lti.homeloan.bean;
+package com.lti.homeloan.bean;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,8 +17,8 @@ import javax.persistence.Table;
 @Table(name = "USER_LOGIN_MST")
 public class UserLogin {
 
-	@Id			
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_LOGIN_MST_ID")
 	private int userId;
 
@@ -27,11 +27,13 @@ public class UserLogin {
 
 	@Column(name = "USER_ROLE")
 	private String userRole;
+
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	@JoinColumn(name="REGISTRATION_USER_MST_ID")
-	//@Column(name = "REGISTRATION_USER_MST_ID")
-	private UserRegistration ur;
+	 @OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)	 
+	 @JoinColumn(name="REGISTRATION_USER_MST_ID") 
+	// @Column(name ="REGISTRATION_USER_MST_ID")
+	 private UserRegistration ur ;
+	 
 
 	public int getUserId() {
 		return userId;
@@ -55,7 +57,7 @@ public class UserLogin {
 
 	public void setUserRole(String userRole) {
 		this.userRole = userRole;
-	}	
+	}
 
 	public UserRegistration getUr() {
 		return ur;
@@ -82,7 +84,5 @@ public class UserLogin {
 		return "UserLogin [userId=" + userId + ", userPassword=" + userPassword + ", userRole=" + userRole + ", ur="
 				+ ur + "]";
 	}
-
-	
 
 }
