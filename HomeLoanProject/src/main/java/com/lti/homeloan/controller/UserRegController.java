@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lti.homeloan.bean.UserDetails;
 import com.lti.homeloan.bean.UserRegistration;
 import com.lti.homeloan.dao.UserRegDaoImpl;
 import com.lti.homeloan.service.UserRegServiceImpl;
@@ -23,11 +24,11 @@ public class UserRegController {
 	private UserRegServiceImpl userService;
 	
 	@PostMapping("/addUser")
-	public int addUser(@RequestBody UserRegistration ur) {
+	public int addUser(@RequestBody UserDetails userDts) {
 		
-		System.out.println("UserRegistration"+ur);
+		System.out.println("UserRegistration"+userDts);
 		
-		return userService.addUser(ur);	
+		return userService.registerUser(userDts);	
 	}
 
 }

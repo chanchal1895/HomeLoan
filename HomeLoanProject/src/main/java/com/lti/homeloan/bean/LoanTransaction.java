@@ -41,9 +41,10 @@ public class LoanTransaction {
 	 @JoinColumn(name="REGISTRATION_USER_MST_ID") 
 	 private UserRegistration ur ;
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)	 
-	 @JoinColumn(name="LOAN_TYPE_ID") 
-	 private LoanType loanType ;
+//	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)	 
+//	 @JoinColumn(name="LOAN_TYPE_ID") 
+	@Column(name="LOAN_TYPE_ID")
+	 private int loanType ;
 
 
 	public String getRemarks() {
@@ -115,6 +116,22 @@ public class LoanTransaction {
 		Remarks = remarks;
 		//this.ur = ur;
 		
+	}
+
+	public UserRegistration getUr() {
+		return ur;
+	}
+
+	public void setUr(UserRegistration ur) {
+		this.ur = ur;
+	}
+
+	public int getLoanType() {
+		return loanType;
+	}
+
+	public void setLoanType(int loanType) {
+		this.loanType = loanType;
 	}
 
 	public LoanTransaction() {
