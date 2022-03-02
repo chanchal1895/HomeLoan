@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lti.homeloan.bean.ContactUs;
 import com.lti.homeloan.bean.UserDetails;
 import com.lti.homeloan.bean.UserRegistration;
 import com.lti.homeloan.dao.UserRegDaoImpl;
@@ -30,5 +31,15 @@ public class UserRegController {
 		
 		return userService.registerUser(userDts);	
 	}
+
+	@PostMapping("/savecontactusinfo")
+	public String addContactUsInfo(@RequestBody UserDetails  contactUs) {
+		
+		System.out.println("ContactUs"+contactUs);
+		
+		return userService.saveContactUsInfo(contactUs);	
+	}
+	
+	
 
 }

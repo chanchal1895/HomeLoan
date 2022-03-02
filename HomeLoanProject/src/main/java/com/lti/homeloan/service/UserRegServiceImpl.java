@@ -3,6 +3,7 @@ package com.lti.homeloan.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.homeloan.bean.ContactUs;
 import com.lti.homeloan.bean.LoanTransaction;
 import com.lti.homeloan.bean.UserDetails;
 import com.lti.homeloan.bean.UserLogin;
@@ -48,6 +49,16 @@ public class UserRegServiceImpl implements UserRegService{
 
 
 
+	@Override
+	public String saveContactUsInfo(UserDetails  contactUs) {
+		String email="";
+		if(!contactUs.equals(null)){
+			 email=dao.saveContactUsInfo(contactUs);		
+				}
+	
+		return email;
+
+	}
 	
 
 }

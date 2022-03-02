@@ -41,8 +41,8 @@ public class LoanTransaction {
 	 @JoinColumn(name="REGISTRATION_USER_MST_ID") 
 	 private UserRegistration ur ;
 	
-//	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)	 
-//	 @JoinColumn(name="LOAN_TYPE_ID") 
+	//@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)	 
+	// @JoinColumn(name="LOAN_TYPE_ID") 
 	@Column(name="LOAN_TYPE_ID")
 	 private int loanType ;
 

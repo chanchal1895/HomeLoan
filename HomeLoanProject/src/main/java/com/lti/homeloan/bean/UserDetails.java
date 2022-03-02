@@ -82,6 +82,20 @@ public class UserDetails {
 	public void setUr(int ur) {
 		this.ur = ur;
 	}
+	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
 	private String firstname;
 	private String lastname;
 	private long mobileNo;
@@ -95,4 +109,6 @@ public class UserDetails {
 	private String userRole;
 	private String loanType;
 	private int ur;
+	private String message;
+	private String subject;
 }
