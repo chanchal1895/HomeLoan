@@ -11,7 +11,5 @@ public interface UserRegDao {
 	public abstract String saveContactUsInfo(UserDetails  contactUs);
 //	public abstract int saveLoginUser(UserDetails userdts);
 //	public abstract int saveLoanTransaction(UserDetails userdts);
-	public int validate(UserDetails userDtls);
-	public abstract UserDetails getUserLoanDetails(String userid);
 	
 }

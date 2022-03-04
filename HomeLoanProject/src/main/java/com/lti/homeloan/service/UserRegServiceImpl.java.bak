@@ -60,20 +60,5 @@ public class UserRegServiceImpl implements UserRegService{
 
 	}
 	
-	@Override
-	public int validate(UserDetails userDtls) {
-	
-		int message = dao.validate(userDtls);
-		return message;
-	}
 
-
-
-	@Override
-	public UserDetails getUserLoanDetails(String userid) {
-	UserDetails userDtls = new UserDetails();
-	if(!userDtls.equals(null)) {
-	userDtls = dao.getUserLoanDetails(userid);}
-	return userDtls;
-	}
 }

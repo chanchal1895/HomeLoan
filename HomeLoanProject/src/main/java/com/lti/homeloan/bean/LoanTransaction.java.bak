@@ -133,6 +133,14 @@ public class LoanTransaction {
 		this.ur = ur;
 	}
 
+	public int getLoanType() {
+		return loanType;
+	}
+
+	public void setLoanType(int loanType) {
+		this.loanType = loanType;
+	}
+
 	public LoanTransaction() {
 		super();
 	}

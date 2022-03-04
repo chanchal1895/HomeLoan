@@ -11,8 +11,6 @@ public interface UserRegService {
 	public abstract int registerUser(UserDetails userDtls);
 	public abstract String saveContactUsInfo(UserDetails contactUs);
 	
-	public abstract UserDetails getUserLoanDetails(String userid);
 	
-	public int validate(UserDetails userDtls);
 	
 }
