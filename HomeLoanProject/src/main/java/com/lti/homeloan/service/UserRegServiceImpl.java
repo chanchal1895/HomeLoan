@@ -1,14 +1,18 @@
 package com.lti.homeloan.service;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.lti.homeloan.bean.ContactUs;
-import com.lti.homeloan.bean.LoanTransaction;
 import com.lti.homeloan.bean.UserDetails;
-import com.lti.homeloan.bean.UserLogin;
 import com.lti.homeloan.bean.UserRegistration;
 import com.lti.homeloan.dao.UserRegDao;
+
+
 @Service("userService")
 public class UserRegServiceImpl implements UserRegService{
 	
@@ -76,4 +80,31 @@ public class UserRegServiceImpl implements UserRegService{
 	userDtls = dao.getUserLoanDetails(userid);}
 	return userDtls;
 	}
+
+
+
+	@Override
+	public int updateUserDetails(UserDetails userRegistration) {
+		// TODO Auto-generated method stub
+		return dao.updateUserDetails(userRegistration);
+	}
+	
+	//File upload
+	
+	@Override
+	public void upload(MultipartFile file) throws IOException {
+		dao.upload(file);
+		
+	}
+	
+	@Override
+    public List<UserDetails> getDetsForAdmin() {
+        List userDtls = new ArrayList<UserDetails>();
+
+        userDtls =  dao.getDetsForAdmin();
+        return userDtls;
+    }
+
+
+
 }

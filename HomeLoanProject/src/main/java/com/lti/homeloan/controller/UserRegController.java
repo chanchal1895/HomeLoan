@@ -1,5 +1,8 @@
 package com.lti.homeloan.controller;
 
+import java.io.IOException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.lti.homeloan.bean.UserDetails;
+import com.lti.homeloan.bean.UserRegistration;
 import com.lti.homeloan.dao.UserRegDaoJPARepository;
 import com.lti.homeloan.service.UserRegServiceImpl;
+
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/userregistration")
@@ -57,12 +64,28 @@ public class UserRegController {
 	}
 	
 		
-		//@Override
+		//http://localhost:8080/userregistration/updateUserDetails
 		@PutMapping(path = "/updateUserDetails")
-		public int updateUserDetails(int userResId, long mobileNo) {
+		public int updateUserDetails(@RequestBody UserDetails userRegistration) {
+
+			//System.out.println("userResId :" + userResId);
 			
-			//return dao.updateSalary(empNo, sal);
-			return 0;
+			return userService.updateUserDetails(userRegistration);
 		}	
+		
+		//file upload
+		
+		 @PostMapping("/upload")
+		  public void upload(@RequestParam MultipartFile file) throws IOException {
+			  
+			  System.out.println(" inside controller ");
+			  userService.upload(file);
+		  }
+		  
+	@GetMapping("/userList")
+	public List<UserDetails> getAllUsers() {
+		return userService.getDetsForAdmin();
+	}
+		
 
 }
