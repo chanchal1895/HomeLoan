@@ -32,6 +32,7 @@ public class UserRegController {
 	private UserRegDaoJPARepository userRegDaoJPARepository;
 
 	
+	
 	@PostMapping("/addUser")
 	public int addUser(@RequestBody UserDetails userDts) {
 		
@@ -82,10 +83,22 @@ public class UserRegController {
 			  userService.upload(file);
 		  }
 		  
-	@GetMapping("/userList")
-	public List<UserDetails> getAllUsers() {
-		return userService.getDetsForAdmin();
-	}
+	
 		
+	@GetMapping("/userList")
+	@ResponseBody
+	public List<UserDetails> getAllUsers(@RequestParam("status") String status) {
+		System.out.println("status ...." + status);
+		return userService.getDetsForAdmin(status);
+	}
+	
+	
+	@PostMapping("/updateUser")
+	public int updateUser(@RequestBody UserDetails userDts) {
 
+		System.out.println("User update....." + userDts);
+		System.out.println("User update....." + userDts.getRemarks()+"  "+userDts.getAppStatus());
+
+		return userService.updateUser(userDts);
+	}
 }

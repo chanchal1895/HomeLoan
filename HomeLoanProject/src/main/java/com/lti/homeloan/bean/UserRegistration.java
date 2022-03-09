@@ -17,6 +17,7 @@ public class UserRegistration {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "REGISTRATION_USER_MST_ID")
 	private int userResId;
+	  // standard constructors / getters / toString }
 	@Column(name = "FIRST_NAME")
 	private String firstname;
 	@Column(name = "LAST_NAME")
@@ -27,9 +28,7 @@ public class UserRegistration {
 	private String gender;
 	@Column(name = "EMAIL_ID")
 	private String primaryEmail;
-	@Column(name = "CITY")
-	private String city;
-	@Column(name = "STATE")
+		@Column(name = "STATE")
 	private String state;
 	@Column(name = "APPLICATION_NUMBER")
 	private int applicationNo;
@@ -72,12 +71,7 @@ public class UserRegistration {
 	public void setPrimaryEmail(String primaryEmail) {
 		this.primaryEmail = primaryEmail;
 	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
+	
 	public String getState() {
 		return state;
 	}
@@ -99,7 +93,7 @@ public class UserRegistration {
 		this.mobileNo = mobileNo;
 		this.gender = gender;
 		this.primaryEmail = primaryEmail;
-		this.city = city;
+		
 		this.state = state;
 		this.applicationNo = applicationNo;
 	}
@@ -110,9 +104,11 @@ public class UserRegistration {
 	@Override
 	public String toString() {
 		return "UserRegistration [userResId=" + userResId + ", firstname=" + firstname + ", lastname=" + lastname
-				+ ", mobileNum=" + mobileNo + ", gender=" + gender + ", email=" + primaryEmail + ", city=" + city + ", state="
+				+ ", mobileNo=" + mobileNo + ", gender=" + gender + ", primaryEmail=" + primaryEmail + ", state="
 				+ state + ", applicationNo=" + applicationNo + "]";
 	}
+	
+	
 	
 	
 	

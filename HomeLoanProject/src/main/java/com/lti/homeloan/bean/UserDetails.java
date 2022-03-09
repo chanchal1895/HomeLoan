@@ -7,7 +7,6 @@ private String firstname;
 	private long mobileNo;
 	private String gender;
 	private String primaryEmail;
-	private String city;
 	private String state;
 	private double loanAmt;
 	private float loanTenure;
@@ -23,10 +22,19 @@ private String firstname;
 	private String approvedBy;
 	private String loanTypeName;
 	private String Remarks;
+	private String Remark;
 	private double loanEMI;
 	private double interestRate;
 	private double totIntPayable;
 	private double totPayment;
+	
+	
+	public String getRemark() {
+		return Remark;
+	}
+	public void setRemark(String remark) {
+		Remark = remark;
+	}
 	public String getFirstname() {
 		return firstname;
 	}
@@ -57,12 +65,7 @@ private String firstname;
 	public void setPrimaryEmail(String primaryEmail) {
 		this.primaryEmail = primaryEmail;
 	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
+	
 	public String getState() {
 		return state;
 	}
@@ -188,7 +191,6 @@ private String firstname;
 		this.mobileNo = mobileNo;
 		this.gender = gender;
 		this.primaryEmail = primaryEmail;
-		this.city = city;
 		this.state = state;
 		this.loanAmt = loanAmt;
 		this.loanTenure = loanTenure;
@@ -216,7 +218,7 @@ private String firstname;
 	@Override
 	public String toString() {
 		return "UserDetails [firstname=" + firstname + ", lastname=" + lastname + ", mobileNo=" + mobileNo + ", gender="
-				+ gender + ", primaryEmail=" + primaryEmail + ", city=" + city + ", state=" + state + ", loanAmt="
+				+ gender + ", primaryEmail=" + primaryEmail +  ", state=" + state + ", loanAmt="
 				+ loanAmt + ", loanTenure=" + loanTenure + ", password=" + password + ", userRole=" + userRole
 				+ ", loanType=" + loanType + ", loanTypeId=" + loanTypeId + ", ur=" + ur + ", message=" + message
 				+ ", subject=" + subject + ", formName=" + formName + ", appStatus=" + appStatus + ", approvedBy="
@@ -225,6 +227,33 @@ private String firstname;
 				+ "]";
 	}
 
-
+	public UserDetails(String primaryEmail, String password) {
+		super();
+		this.primaryEmail = primaryEmail;
+		this.password = password;
+		}
+		public UserDetails(int userResId, String firstname, String lastname, long mobileNo, String gender, String primaryEmail,
+		String state, double loanAmt, float loanTenure, String password, int loanTypeId) {
+		super();
+		this.ur=userResId;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.mobileNo = mobileNo;
+		this.gender = gender;
+		this.primaryEmail = primaryEmail;
+		this.state = state;
+		this.loanAmt = loanAmt;
+		this.loanTenure = loanTenure;
+		this.password = password;
+		this.loanTypeId = loanTypeId;
+		}
+		public UserDetails(String firstname, String lastname, String primaryEmail, String message, String subject) {
+			super();
+			this.firstname = firstname;
+			this.lastname = lastname;
+			this.primaryEmail = primaryEmail;
+			this.message = message;
+			this.subject = subject;
+		}
 	
 }

@@ -19,7 +19,9 @@ public interface UserRegDao {
 	public int validate(UserDetails userDtls);
 	public abstract UserDetails getUserLoanDetails(String userid);
 	public int updateUserDetails(UserDetails userRegistration);
-	void upload(MultipartFile file) throws IOException;
+	public void upload(MultipartFile file) throws IOException;
 	public List<UserDetails> getDetsForAdmin();
+	public int updateUser(UserDetails userDtls);
+	public List<UserDetails> getDetsForAdmin(String status);
 	
 }

@@ -19,5 +19,7 @@ public interface UserRegService {
 	void upload(MultipartFile file) throws IOException;
 	public int updateUserDetails(UserDetails userRegistration);
 	public List<UserDetails> getDetsForAdmin() ;
+	public List<UserDetails> getDetsForAdmin(String status);
+	public int updateUser(UserDetails userDtls);
 	
 }

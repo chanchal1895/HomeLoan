@@ -32,6 +32,23 @@ public class UserRegServiceImpl implements UserRegService{
 		this.dao = dao;
 	}
 
+	@Override
+	public List<UserDetails> getDetsForAdmin(String status) {
+		List userDtls = new ArrayList<UserDetails>();
+		
+		userDtls =  dao.getDetsForAdmin(status);
+		return userDtls;
+	}
+
+	@Override
+	public int updateUser(UserDetails userDtls) {
+		int i = 0;
+		if (!userDtls.equals(null)) {
+			i = dao.updateUser(userDtls);
+		}
+
+		return i;
+	}
 
 
 	@Override
@@ -100,8 +117,11 @@ public class UserRegServiceImpl implements UserRegService{
 	@Override
     public List<UserDetails> getDetsForAdmin() {
         List userDtls = new ArrayList<UserDetails>();
-
+try {
         userDtls =  dao.getDetsForAdmin();
+}catch(Exception ex) {
+	
+}
         return userDtls;
     }
 
